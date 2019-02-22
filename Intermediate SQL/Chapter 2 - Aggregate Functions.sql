@@ -1,3 +1,7 @@
+
+
+
+
 /*SQL Aggregate Functions*/
 
 
@@ -178,6 +182,72 @@ GROUP BY year, month
 HAVING MAX(high) > 400
 ORDER BY year, month
 
+
+
+
+/*Write a query to select unique values from the month column in apple stock prices datasets*/
+
+select DISTINCT year, monthhttps://modeanalytics.com/editor/ashutosgunjal/reports/2b1656591181#
+from tutorial.aapl_historical_stock_price
+
+
+
+
+/*Write a query that returns the unique values in the year column, in chronological order.*/
+
+select DISTINCT year
+from tutorial.aapl_historical_stock_price
+ORDER BY year
+
+
+
+
+/*Write a query that counts the unique values in the month column.*/
+
+select COUNT(DISTINCT month) AS "Unique Months"
+from tutorial.aapl_historical_stock_price
+
+
+
+
+
+/*Write a query that average trade volumes by month to get a sense of when Apple stock really moves*/
+
+select month,
+       AVG(volume) as "Average Trade Volume"
+from tutorial.aapl_historical_stock_price
+GROUP BY month
+
+
+
+
+
+/*Write a query that counts the number of unique values in the month column for each year.*/
+
+select  year,
+        COUNT(DISTINCT month) AS "Month Count"
+from tutorial.aapl_historical_stock_price
+GROUP BY year
+ORDER BY year
+
+
+
+
+
+
+/*Write a query that separately counts the number of unique values in the month column and the 
+number of unique values in the `year` column.*/
+
+SELECT COUNT(DISTINCT year) AS years_count,
+       COUNT(DISTINCT month) AS months_count
+  FROM tutorial.aapl_historical_stock_price
+  
+  
+  
+  
+  
+  
+  
 
 
 
